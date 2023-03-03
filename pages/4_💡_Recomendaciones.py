@@ -41,3 +41,4 @@ else:
     window_size = st.number_input('Periodo de SMA', min_value=30, max_value=500, step=10)
     fig_sma = plot_sector_companies_sma(consumer_discretionary, 'consumo discrecional',window_size)
     st.plotly_chart(fig_sma, config=dict(displayModeBar=False), use_container_width=True)
+    
