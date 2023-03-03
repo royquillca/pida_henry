@@ -13,24 +13,21 @@ st.subheader('**Análisis de inversión en el mercado bursátil**')
 
 
 
+option = st.selectbox('Selecciona la compañía', ('MTD','AVGO','NVR'))
 
-# Carga de datos de empresas a invertir
-MTD = pd.read_parquet('data/inv_companies/mtd.parquet')
-AVGO = pd.read_parquet('data/inv_companies/avgo.parquet')
-NVR = pd.read_parquet('data/inv_companies/nvr.parquet')
-
+df = pd.read_parquet(f'data/inv_companies/{option.lower()}.parquet')
 col1, col2, col3 = st.columns(3)
 with col1:
     period_time= 'anual'
-    kpi1_value = calc_volatility(MTD, f'{period_time}')
+    kpi1_value = calc_volatility(df, f'{period_time}')
     st.metric(label=f"Volatilidad {period_time}", value=str(round(kpi1_value * 100, 2)) + " %")
 with col2:
-    kpi2_value = calc_agr(MTD)
+    kpi2_value = calc_agr(df)
     st.metric(label=f"Crecimiento promedio anual (AGR)", value=str(round(kpi2_value * 100, 2)) + " %")
     
 with col3:
     period_time= '1y'
-    kpi3_value = calculate_cumulative_return(MTD, F'{period_time}')
+    kpi3_value = calculate_cumulative_return(df, F'{period_time}')
     st.metric(label=f"Rendimiento acumulado", value=str(round(kpi3_value * 100, 2)) + " %")
 
 # Mostrar la imagen con personalización
