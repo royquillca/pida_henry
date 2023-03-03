@@ -1,4 +1,4 @@
-<h1 align="center">Análisis de inversion en mercado bursátil</h1>
+<h1 align="center">Análisis de inversión en mercado bursátil</h1>
 
 <p align="center">
 <img src="./assets/treplot_sp500.png">
