@@ -4,7 +4,7 @@ import numpy as np
 
 from utils.sp500 import plot_time_series, plot_sma_graph, plot_candlestick_chart, plot_evol_volatility, plot_boxplot, plot_anual_performance, plot_daily_performance, plot_volumen
 
-from utils.sp500_sector import price_tendency_plot
+
 
 # Análisi de la serie temporal
 plot_time_series()

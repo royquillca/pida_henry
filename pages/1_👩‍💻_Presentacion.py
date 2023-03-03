@@ -4,21 +4,37 @@ import numpy as np
 import pandas as pd
 
 import streamlit as st
-
+from utils.kpis import calc_volatility, calc_agr, calculate_cumulative_return
+# from utils.
 
 st.subheader('**Análisis de inversión en el mercado bursátil**')
-st.markdown('**Descripción del problema**')
-st.markdown('**Objetivos**')
+# st.markdown('**Descripción del problema**')
+# st.markdown('**Objetivos**')
+
+
+
+
+# Carga de datos de empresas a invertir
+MTD = pd.read_parquet('data/inv_companies/mtd.parquet')
+AVGO = pd.read_parquet('data/inv_companies/avgo.parquet')
+NVR = pd.read_parquet('data/inv_companies/nvr.parquet')
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    pass
-
+    period_time= 'anual'
+    kpi1_value = calc_volatility(MTD, f'{period_time}')
+    st.metric(label=f"Volatilidad {period_time}", value=str(round(kpi1_value * 100, 2)) + " %")
 with col2:
-    pass
+    kpi2_value = calc_agr(MTD)
+    st.metric(label=f"Crecimiento promedio anual (AGR)", value=str(round(kpi2_value * 100, 2)) + " %")
     
 with col3:
-    pass
+    period_time= '1y'
+    kpi3_value = calculate_cumulative_return(MTD, F'{period_time}')
+    st.metric(label=f"Rendimiento acumulado", value=str(round(kpi3_value * 100, 2)) + " %")
+
+# Mostrar la imagen con personalización
+st.image('assets/treplot_sp500.png')
 
 
 
