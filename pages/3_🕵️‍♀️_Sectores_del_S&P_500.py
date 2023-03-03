@@ -43,7 +43,6 @@ sector_option = st.selectbox('**Sector del S&P 500**', ('Consumer Discretionary'
                                   'Materials',
                                   'Utilities'))
 
-
 fig_trend = price_trend_plot(sector_option)
 fig_ts.update_layout(title={'text': f'Evolución del precio de cierre ajustado de los 10 sectores del S&P 500 {sector_option.replace("_", " ")}', 'x':0})
 # fig_trend.update_layout(title={'text': sector_option, })
