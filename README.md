@@ -1,5 +1,6 @@
 <h1 align="center">Análisis de inversion en mercado bursátil</h1>
 
+![Tree.plot](../pida_henry/assets/treplot_sp500.png)
 ## Introducción:
 En este proyecto simulamos una situación en donde una empresa busca invertir en el mercado bursátil y nos solicita analizarlo en detalle. Como expertos en datos, estamos en capacidad de brindar una explicación de lo que ha sucedido en este mercado en los últimos años (considerando impactos positivos y negativos a partir del año 2000), recomendaciones de inversión y otra información complementaria. El foco del análisis es variado y amplio, pero nos limitamos a las empresas pertenecientes al índice SP500 (Standard & Poor's 500 Index).
 
